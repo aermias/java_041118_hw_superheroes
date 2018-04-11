@@ -1,5 +1,9 @@
 package superheroes;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
 public class Main {
     static String separator = "=====================================================================";
 
@@ -9,11 +13,12 @@ public class Main {
         TheFlash barry = new TheFlash("Barry Allen", new String[]{"super speed"});
         GreenLantern john = new GreenLantern("John Stewart", new String[]{"flight", "force fields"});
 
-        SuperHero[] dcHeroes = new SuperHero[]{clark, bruce, barry, john};
+        ArrayList<SuperHero> dcHeroes = new ArrayList<SuperHero>(Arrays.asList(clark, bruce, barry, john));
 
         // breakdown loop
-        for (SuperHero s : dcHeroes) {
-            String breakdown = s.getRealName() + " possesses these superpowers " + s.listPowers();
+        for (Iterator<SuperHero> iterator = dcHeroes.iterator(); iterator.hasNext();) {
+            SuperHero current_hero = iterator.next();
+            String breakdown =  current_hero.getRealName() + " possesses these superpowers " + current_hero.listPowers();
             System.out.println(breakdown + '\n' + separator);
         }
 

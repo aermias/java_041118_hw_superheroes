@@ -9,5 +9,8 @@
         <module name="superheroes" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="superheroes" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
